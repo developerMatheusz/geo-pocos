@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron mt-lg-5">
+        <div class="container">
+            <h1>GeoPoços</h1>
+            <p>SIG-WEB com o objetivo de exibir os poços perfurados do Estado do Paraná</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="{% url 'geocore:map' %}" role="button">Acessar o mapa</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

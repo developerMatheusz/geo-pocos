@@ -1,0 +1,5 @@
+var pitCoord = [
+    {% for pit in pits %}
+        [{{ pit.geom.y|safe }}, {{ pit.geom.x|safe }}, {{ pit.q_m3h|safe }}],
+    {% endfor %}
+];

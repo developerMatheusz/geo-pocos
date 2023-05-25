@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link href="{% static 'libs/leaflet/leaflet.css' %}" rel="stylesheet" />
+{% endblock extra_css %}
+
+{% block content %}
+    <div id="map"></div>
+
+    <input type="hidden" id="pit_geojson" value="{% url 'pit:pit_geojson' %}" />
+
+    <input type="hidden" id="pit_js" value="{% url 'pit:pit_js' %}" />
+
+    <input type="hidden" id="qmax" value="{{ q_max.q_m3h|safe }}" />
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'libs/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'libs/leaflet-heat/leaflet-heat.js' %}"></script>
+    <script src="{% url 'pit:pit_js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+{% endblock extra_js %}
